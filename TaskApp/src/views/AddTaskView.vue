@@ -169,6 +169,7 @@ const getFormData = () => {
                   : 'text-gray-400 hover:bg-lighter-brown hover:text-white',
                 'block rounded-md px-3 py-2 text-base font-medium'
               ]"
+              @click="item.onClick"
               :aria-current="item.current ? 'page' : undefined"
               >{{ item.name }}</DisclosureButton
             >
@@ -185,6 +186,7 @@ const getFormData = () => {
                 :key="item.name"
                 as="a"
                 :href="item.href"
+                @click="item.onClick"
                 class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-lighter-brown hover:text-white"
                 >{{ item.name }}</DisclosureButton
               >
