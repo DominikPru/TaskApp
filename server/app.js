@@ -124,19 +124,20 @@ async function insertRegister(req, res) {
 //Insert a new team to the database
 async function insertTeam(req, res) {
   try {
-    const min = 1000;
-    const max = 9999;
+    let randomNumber;
+    let existingTeam;
 
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    do {
+      const min = 1000;
+      const max = 9999;
+      randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+      existingTeam = await teamModel.findOne({ code: randomNumber });
+    } while (existingTeam);
 
-    const existingTeam = await teamModel.findOne({ code: randomNumber });
     const existingEmail = await teamModel.findOne({ email: req.body.Email });
     const existingName = await teamModel.findOne({ name: req.body.Name });
 
-    if (existingTeam) {
-      insertTeam();
-      return;
-    } else if (existingEmail || existingName) {
+    if (existingEmail || existingName) {
       res.send("Name or Email already registered");
       return;
     } else {
@@ -158,7 +159,6 @@ async function insertTeam(req, res) {
     res.status(500).send("Internal Server Error");
   }
 }
-
 //Inserts a new task into the database
 async function insertTask(req, res) {
   try {
