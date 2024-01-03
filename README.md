@@ -4,7 +4,7 @@ This is a task management application built with the MEVN stack (MongoDB, Expres
 
 ## Features
 
-- Assign, Update, and Delete tasks as a team manager, recieve tasks and mark them as finished from your manager as a team member.  
+- Assign, Update, and Delete tasks as a team manager, recieve tasks from your manager and mark them as finished as a team member.  
 
 ### Prerequisites
 
