@@ -4,7 +4,7 @@ This is a task management application built with the MEVN stack (MongoDB, Expres
 
 ## Features
 
-- Create, update, and delete tasks. All that you need in a simple TaskApp.
+- Assign, Update, and Delete tasks as a team manager, recieve tasks and mark them as finished from your manager as a team member.  
 
 ### Prerequisites
 
@@ -19,8 +19,7 @@ git clone <repository-url>
 
 2. Install NPM packages
 
-cd server && npm install
-cd ../TaskApp && npm install
+cd server / client && npm install
 
 3. Add your database connection string into the "uri" var in server
 
@@ -34,6 +33,6 @@ cd TaskApp && npm run dev
 
 #### QuickStart
 
-Live version can be found here: www.taskdemo.onrender.com
+Live version: www.taskdemo.onrender.com
 
 
